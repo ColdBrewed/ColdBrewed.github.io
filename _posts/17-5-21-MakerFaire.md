@@ -2,7 +2,7 @@
 layout: post
 title: Maker Faire 2017
 ---
-![Tapegami-make](/images/20170521_151947.jpg)
+![Tapegami-make](/images/tapegami-make.jpg)
 I was very fortunate this year to get invited to attend Maker Faire with [Noisebridge](https://noisebridge.net/), the awesome San Francisco hackerspace. I've been hanging out at Noisebridge to work on some electronics projects thanks to J at his Circuit Hacking Monday. Noisebridge has dome some really cool projects for Maker Faire in the past like the [Flaschen Taschen](https://github.com/hzeller/flaschen-taschen) a giant LED screen made with beer bottles, milk crates, and powered by a raspberry pi. 
 ![flaschen-taschen](/images/ft-completed.jpg "Flaschen Taschen")
 
