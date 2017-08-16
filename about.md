@@ -1,15 +1,19 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
 
-Some information about you!
-
+![/images/portrait1.jpg]
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I am a white hat hacker with a focus on hardware hacking, wifi, network security, and mobile security. I play in CTFs with my team [Scott's Tots](https://ctftime.org/team/33841). You can find me at Noisebridge hackerspace on Thursday nights where I teach at Infosec Lab Night.
+
+## Let's Connect
+
+[Twitter](https://twitter.com/Justified_Salt)
+[LinkedIn](https://linkedin.com/in/kellyalbrink)
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[kelly.albrink@protonmail.com](mailto:kelly.albrink@protonmail.com)
