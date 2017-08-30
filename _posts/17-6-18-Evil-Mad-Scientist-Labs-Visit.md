@@ -1,5 +1,5 @@
 
-![](/images/EMSL-visit.jpg)
+![](/images/EMSL-visit.jpg.jpg)
 
 The awesome folks at [Evil Mad Scientist Labs](http://www.evilmadscientist.com/) invited some of us from Noisebridge to come check out their workshop for a private tour. They are the creators of the awesome pen plotter, the axidraw, that was used in Noisebridge's Ordibooth project for Maker Faire. We got to see their amazing projects up close and ask an embarassing ammount of questions. 
 
