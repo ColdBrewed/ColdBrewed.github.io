@@ -1,6 +1,6 @@
 
 Noisebridge has a weekly infosec lab night on Thursdays at 6:30pm. Our first lab went over Kioptrix 1. Below is a walkthrough to guide you from setup to a root shell. 
-![](/images/Noisebridge-logo.png | width=100)
+<img src="/images/Noisebridge-logo.png" width="100px">
 
 ### Setting up the VM: 
 
