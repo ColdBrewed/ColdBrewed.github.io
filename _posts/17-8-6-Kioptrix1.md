@@ -60,6 +60,20 @@ Congratulations! You just got a root shell.
 
 That was pretty easy, huh? Can you find other methods to exploit this machine? We could also use metasploit to exploit Samba with the trans2open method.
 
+### Metasploit Method
+
+Fire up metasploit and do a quick search on trans2open (**search trans2open**), which was one of the methods that we saw listed when we did a searchsploit on Samba 2.2
+![](/images/kioptrix/kioptrix1-8.png)
+
+Since we're targeting a linux system lets use the following exploit.
+**use exploit/linux/samba/trans2open**
+
+If you're new to metasploit you can use commands like **show info** or **show options** to get more information about the module. We set the target system with **set RHOSTS {target IP}**. The standard payload for this module is a staged meterpreter, but it can be very unstable against kioptrix. I had the most success with setting a simple payload like **linux/x86/shell_reverse_tcp**. After you have set all the required settings show under show options, type **exploit** to run the module.
+
+![](/images/kioptrix1/kioptrix1-9.png)
+
+We just got another root shell!
+
 Next week we'll be moving on to Kioptrix 2 (AKA Kioptrix 1.1).
 
 Check back for more walkthroughs.
