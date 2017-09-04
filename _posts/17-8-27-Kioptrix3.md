@@ -8,6 +8,7 @@ I'm back with my third walkthrough in the Kioptrix series.
 - [Kioptrix 2 Walkthrough]()
 
 ## Setup
+
 As usual, lets start by identifying our attacker and target IP addresses.
 ![](/images/kioptrix3/K3-1.png)
 
@@ -17,7 +18,9 @@ This vm has some special DNS setup instructions. DNS is the service that convert
 
 In your atacker VM run:
 >echo "192.168.65.134 kioptrix3.com" >> /etc/hosts
+
 ## Recon
+
 Let's take a closer look:
 
 >nmap -sV 192.168.65.134
@@ -59,7 +62,7 @@ Once an exploitable injection point is found, I like to take a look at the table
 We can see that the gallery database has a dev_accounts table.
 ![](/images/kioptrix3/K3-10.png)
 
-Let's run the command again, but with the **--dump** flag and identify the gallery database and dev_accounts table. When asked if we'd like to run a dictionary attack against the discovered hashes, we choose yes:
+Let's run the command again, but with the `--dump` flag and identify the gallery database and dev_accounts table. When asked if we'd like to run a dictionary attack against the discovered hashes, we choose yes:
 
 ![](/images/kioptrix3/K3-11.png)
 
@@ -68,10 +71,13 @@ We discover two users with weak passwords. One really common vulnerability is pa
 ![](/images/kioptrix3/K3-12.png)
 
 Bingo! We have a low priv shell under the loneferret user account. If we look in loneferret's home folder, we find an interesting file called CompanyPolicy.README
-![](/images/kioptrix3/K3-13.png)
+
 
 I also ran `sudo -l` to see if loneferret could run any other privileged commands.
-![](/images/kioptrix3/K3-14.png)
+
+![](/images/kioptrix3/K3-13.png)
+
+
 
 I ran into a small probelm here when trying to run the `sudo ht` command. "Error opening ternminal: xterm-256color
 
@@ -79,8 +85,10 @@ I found the solution [here](https://stackoverflow.com/questions/6804208/nano-err
 `export TERM=xterm`
 
 Now the ht editor opens
-![](/images/kioptrix3/K3-15.png)
+![](/images/kioptrix3/K3-14.png)
+
 I chose to edit the /etc/sudoers file to give loneferret root privileges.
+![](/images/kioptrix3/K3-15.png)
 Then it's just a matter of spawning a root shell.
 ![](/images/kioptrix3/K3-16.png)
 
