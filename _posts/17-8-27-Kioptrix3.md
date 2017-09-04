@@ -9,6 +9,7 @@ I'm back with my third walkthrough in the Kioptrix series.
 ## Setup
 
 As usual, lets start by identifying our attacker and target IP addresses.
+
 ![](/images/kioptrix3/K3-1.png)
 
 ![](/images/kioptrix3/K3-2.png)
@@ -23,10 +24,12 @@ In your atacker VM run:
 Let's take a closer look:
 
 >nmap -sV 192.168.65.134
+
 ![](/images/kioptrix3/K3-3.png)
 
 
 When we visit kioptrix3.com in our browser we find a blog.
+
 ![](/images/kioptrix3/K3-4.png)
 
 When testing against a web app, it's a good idea to manually crawl the site and inspect each page. We start by reading the blog page and gain some helpful pieces of information. Our attention is directed to the /gallery page, where the company's new webapp is hosted. We also see that a new 13 year old wizard admin has been hired and his name is "loneferret"
@@ -78,8 +81,10 @@ I also ran `sudo -l` to see if loneferret could run any other privileged command
 ![](/images/kioptrix3/K3-13.png)
 
 
->I ran into a small probelm here when trying to run the `sudo ht` command. "Error opening ternminal: xterm-256color
+I ran into a small probelm here when trying to run the `sudo ht` command. "Error opening ternminal: xterm-256color
+
 I found the solution [here](https://stackoverflow.com/questions/6804208/nano-error-error-opening-terminal-xterm-256color) on stackoverflow. 
+
 `export TERM=xterm`
 
 
@@ -87,9 +92,9 @@ Now the ht editor opens
 ![](/images/kioptrix3/K3-14.png)
 
 I chose to edit the /etc/sudoers file to give loneferret root privileges.
-![](/images/kioptrix3/K3-15.png)
+
 Then it's just a matter of spawning a root shell.
-![](/images/kioptrix3/K3-16.png)
+![](/images/kioptrix3/K3-15.png)
 
 That's one way to get root. How about that other service? LotusCMS.
 
@@ -97,17 +102,17 @@ That's one way to get root. How about that other service? LotusCMS.
 
 ### Method 2: LotusCMS Exploit
 
-![](/images/kioptrix3/K3-17.png)
+![](/images/kioptrix3/K3-16.png)
 LotusCMS has a remote command execution exploit in the metasploit framework. If this is your first time using metasploit, [start here](https://docs.kali.org/general-use/starting-metasploit-framework-in-kali).
 
 
 We open the metasploit framework by running `service postgresql start` to start the backend database. And then run `mfconsole`
 
-![](/images/kioptrix3/K3-18.png)
+![](/images/kioptrix3/K3-17.png)
 
 When we search for lotusCMS one exploit surfaces. There are only a few compatible payloads, all php based, you can choose between a regular command shell or a meterpreter shell. On linux hosts I generally prefer the command shell, but it's pretty trivial to switch between the two.
 
-![](/images/kioptrix3/K3-19.png)
+![](/images/kioptrix3/K3-18.png)
 
 I haven't found a good way to do privesc on this approach, without doing some workarounds to replicate the previous loneferret privesc method. The usual suspects (common kernel exploits, metasploit post modules) are not landing. Let me know if you have some ideas. 
 
