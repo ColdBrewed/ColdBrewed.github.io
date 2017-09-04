@@ -1,7 +1,6 @@
 
-# Kioptrix 3 
-
 I'm back with my third walkthrough in the Kioptrix series. 
+
 ![](goat.gif)
 
 - [Kioptrix 1 Walkthrough]()
