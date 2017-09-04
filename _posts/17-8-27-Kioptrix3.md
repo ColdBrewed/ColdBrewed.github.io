@@ -1,10 +1,10 @@
 
 I'm back with my third walkthrough in the Kioptrix series. 
 
-![](goat.gif)
+![](/images/kioptrix3/goat.gif)
 
-- [Kioptrix 1 Walkthrough]()
-- [Kioptrix 2 Walkthrough]()
+- [Kioptrix 1 Walkthrough](https://coldbrewed.github.io/Kioptrix2/)
+- [Kioptrix 2 Walkthrough](https://coldbrewed.github.io/Kioptrix1/)
 
 ## Setup
 
@@ -74,7 +74,7 @@ We discover two users with weak passwords. One really common vulnerability is pa
 
 Bingo! We have a low priv shell under the loneferret user account. If we look in loneferret's home folder, we find an interesting file called CompanyPolicy.README
 
-![](/images/kioptrix3/K3-19.png]
+![](/images/kioptrix3/K3-19.png)
 
 I also ran `sudo -l` to see if loneferret could run any other privileged commands.
 
