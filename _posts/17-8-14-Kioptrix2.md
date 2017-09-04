@@ -1,6 +1,8 @@
 
 Kioptrix 2 is the second web application hacking challenge created by Loneferret. If you need help setting up your VM see some of my troubleshooting tips in [my Kioptrix 1 Walkthrough]().
 
+![](/images/kioptrix2/hacker_kid.gif)
+
 ### Step 1: Recon
 
 After you get both your target VM (Kioptrix2) and your attacker VM (Kali/Parrot/etc.) spun up, the first step is going to be to identify your IP addresses. Start by running an **ifconfig** on your Kali Machine.
