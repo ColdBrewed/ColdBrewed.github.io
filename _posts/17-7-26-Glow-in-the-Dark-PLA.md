@@ -1,7 +1,7 @@
 
-
-<img src="/images/GlowPLA/NB-Glow-logos.jpg" height="400 px" >
-
+<p align="center">
+<img src="/images/GlowPLA/NB-Glow-logos.jpg" height="400 px" align="middle" >
+</p>
 I've been experimenting with some glow-in-the-dark PLA filament. I bought two types, one from Hatchbox and another from MeltInk.
 The Hatchbox prints as a opaque white with with a light green cast. The Meltink is a light blue color. I THOUGHT that the blue PLA would glow blue, but as you can see in the image above it's just a paler green. Super disappointing. 
 
