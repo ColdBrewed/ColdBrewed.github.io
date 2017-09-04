@@ -72,17 +72,17 @@ We discover two users with weak passwords. One really common vulnerability is pa
 
 Bingo! We have a low priv shell under the loneferret user account. If we look in loneferret's home folder, we find an interesting file called CompanyPolicy.README
 
+![](/images/kioptrix3/K3-19.png]
 
 I also ran `sudo -l` to see if loneferret could run any other privileged commands.
 
 ![](/images/kioptrix3/K3-13.png)
 
 
-
-I ran into a small probelm here when trying to run the `sudo ht` command. "Error opening ternminal: xterm-256color
-
+>I ran into a small probelm here when trying to run the `sudo ht` command. "Error opening ternminal: xterm-256color
 I found the solution [here](https://stackoverflow.com/questions/6804208/nano-error-error-opening-terminal-xterm-256color) on stackoverflow. 
 `export TERM=xterm`
+
 
 Now the ht editor opens
 ![](/images/kioptrix3/K3-14.png)
