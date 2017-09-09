@@ -115,24 +115,10 @@ When we search for lotusCMS one exploit surfaces. There are only a few compatibl
 ![](/images/kioptrix3/K3-18.png)
 
 Since we're now in a low priv shell as the "www-data" user, we'll have to take a different approach to privilege escalation than the simple sudo ht. Let's try a more modern privesc exploit, dirty cow. I'm going to be using the "firefart" flavor of dirty cow [found here](https://github.com/FireFart/dirtycow/blob/master/dirty.c)
+
 ![](/images/kioptrix3/firefart.gif)
+
 Real mature, guys.
-
-
-Let's drop down from meterpreter into a standard shell with the `shell` command and then upgrade to a TTY shell with `python -c 'import pty;spawn.pty("/bin/bash")'` Now it's time to move into a writeable directory and transfer our exploit. I like spinning up a simple (`python -m SimpleHTTPServer 8080`) python server hosting my exploit files and then using wget to transfer them.
-![](/images/kioptrix3/K3-20.png)
-Next we compile our exploit with the -pthread and -lcrypt flags, as instructed in the exploit file.
-![](/images/kioptrix3/K3-21.png)
-Now we're ready to fire it off with `./dirty`
-After the script runs we are prompted to enter a password for the newly created "firefart" user. Then it's just a matter of su-ing into that user.
-
-![](/images/kioptrix3/K3-22.png)
-
-
-Since we're now in a low priv shell as the "www-data" user, we'll have to take a different approach to privilege escalation than the simple sudo ht. Let's try a more modern privesc exploit, dirty cow. I'm going to be using the "firefart" flavor of dirty cow [found here](https://github.com/FireFart/dirtycow/blob/master/dirty.c)
-![](/images/kioptrix3/firefart.gif)
-Real mature, guys.
-
 
 Let's drop down from meterpreter into a standard shell with the `shell` command and then upgrade to a TTY shell with `python -c 'import pty;spawn.pty("/bin/bash")'` Now it's time to move into a writeable directory and transfer our exploit. I like spinning up a simple (`python -m SimpleHTTPServer 8080`) python server hosting my exploit files and then using wget to transfer them.
 ![](/images/kioptrix3/K3-20.png)
